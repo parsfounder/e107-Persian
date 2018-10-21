@@ -1,0 +1,29 @@
+
+hdd: wd0a, wd1a, wd0b, wd1b
+odd: cd0a, cd1a, cd0b, cd1b
+usb: sd0a, sd1a, sd0b, sd1b
+
+> gunzip NetBSD-7.0-amd64-install.img.gz
+> dd if=NetBSD-7.0-amd64-install.img of=/dev/da0 bs=1m
+> su >> PKG_PATH="https://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/7.0/All/"
+> su >> export PKG_PATH
+> su >> pkg_add pkgin
+> pkgin install nano sudo fam dbus hal ratpoison
+> irBSD ALL=(ALL) ALL >> /usr/pkg/etc/sudoers
+> sudo nano /usr/pkg/etc/pkgin/repositories.conf
+> https://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/7.0/All/
+> sudo pkgin update
+> sudo cp /usr/pkg/share/examples/rc.d/famd /etc/rc.d/
+> sudo cp /usr/pkg/share/examples/rc.d/dbus /etc/rc.d/
+> sudo cp /usr/pkg/share/examples/rc.d/hal /etc/rc.d/
+> sudo nano /etc/rc.conf
+> xdm=YES >> rpcbind=YES >> famd=YES >> dbus=YES >> hal=YES >> clear_tmp >> ntpd >> sshd >> rtclocaltime
+> exec /usr/pkg/bin/ratpoison >> /home/pclite/.xinitrc
+> sudo ln -s /home/irBSD/.xinitrc /home/irBSD/.xsession
+> sudo chmod u+x /home/irBSD/.xsession
+> sudo nano /etc/ttys >> set console off
+> dkctl /dev/sd0 or disklabel -l or fdisk -l
+> clone >> dd if=/dev/sd0 bs=1m count=5128 | gzip -c  > /path/to/irBSD.img.gz
+> restore >> gunzip -c /path/to/irBSD.img.gz | dd of=/dev/sd0 bs=1m
+> cat | less /var/db/pkgin/pkg_install-err.log
+> cat | less /var/log/messages
