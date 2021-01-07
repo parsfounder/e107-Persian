@@ -1,8 +1,4 @@
-# irBSD
-A digital forensic suite based on NetBSD operating system for cryptography, penetration testing, 
-data recovery, reverse engineering, privacy and other security tasks with pkgin package management 
-and ratpoison as default window manager. irBSD is configured for USB mediums and x86_64 platforms.
+# Quail System Configuration
+Quail system configuration is an open-source software written in C++ to change settings and preferences of your platform (operating system) more easier and comfortable, Quail system configuration is designed for x86_64 platforms. [coming soon...]
 
-www.irbsd.net
-
-info@irbsd.net
+Download at https://pclite.net/quail
