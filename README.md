@@ -1,2 +1,6 @@
-# PCLITEOS Control Panel
-PCLITEOS Control Panel is an open-source software written in C++ to change settings and preferences of your platform (operating system) more easier and comfortable, PCLITEOS Control Panel is designed for x86_64 platforms. [coming soon...]
+# e107-Persian
+e107 CMS Persian Language
+
+e107 is a free and open-source content management system (CMS) which allows you to manage and publish your content online with ease. Developers can save time in building websites and powerful online applications. Users can avoid programming completely! Blogs, websites, intranets – e107 does it all.
+
+Support at https://www.e107help.org
